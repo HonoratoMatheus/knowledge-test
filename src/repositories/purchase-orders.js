@@ -26,9 +26,10 @@ module.exports = class PurchaseOrdersRepository {
         return purchase_orders;
     }
     async create(purchase_order) {
+        console.log('FUNCAO CREATE', purchase_order);
         const sql = `
             INSERT INTO 
-                purchase_orders (product_id, id) 
+                purchase_orders (product_id, price) 
             VALUES 
                 (?,?);
         `;
