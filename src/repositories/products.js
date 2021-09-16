@@ -18,7 +18,6 @@ module.exports = class ProductsRepository {
     }
 
     async create(products) {
-        console.log('TESTING');
         const sql = `
             INSERT INTO 
                 products (description, supplier_id) 
