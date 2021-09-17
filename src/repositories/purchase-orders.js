@@ -4,7 +4,6 @@ const db = makeDbInstance();
 
 module.exports = class PurchaseOrdersRepository {
     async findAll() {
-        console.log(this);
         const sql = `
             SELECT
                 purchase_orders.id AS id,
@@ -25,7 +24,6 @@ module.exports = class PurchaseOrdersRepository {
             
         `;
         const purchase_orders = await db.select(sql);
-
         return purchase_orders;
     }
     async create(purchase_order) {
@@ -39,7 +37,6 @@ module.exports = class PurchaseOrdersRepository {
         return db.persistMany(sql, purchase_order);
     }
     async delete(order_id) {
-        console.log('DELETING');
         const sql = `
             UPDATE
                 purchase_orders

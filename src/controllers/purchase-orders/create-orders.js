@@ -9,7 +9,6 @@ module.exports = class CreatePurchaseOrderController {
     async handle(request) {
         try {
             const errors = this.validation.validate(request.body);
-            ;
             if (errors.length > 0) {
                 return badRequest(errors);
             }
